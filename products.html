@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Royal Hour – Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+}
+header {
+    background: #0b2c4d;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h2 {
+    margin: 0;
+}
+.cart {
+    font-size: 16px;
+}
+.container {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.card h3 {
+    margin: 12px 0 6px;
+}
+.price {
+    font-weight: bold;
+    color: #0b2c4d;
+    margin-bottom: 10px;
+}
+button {
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.add {
+    background: #007bff;
+    color: white;
+}
+.order {
+    background: #28a745;
+    color: white;
+}
+button:hover {
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>⌚ Royal Hour</h2>
+    <div class="cart">🛒 Cart: <span id="cartCount">0</span></div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/1697570/pexels-photo-1697570.jpeg" alt="Classic Watch">
+        <h3>Classic Leather Watch</h3>
+        <p class="price">₹2,999</p>
+        <button class="add" onclick="addToCart()">Add to Cart</button>
+        <button class="order" onclick="orderNow('Classic Leather Watch')">Order Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg" alt="Sports Watch">
+        <h3>Sports Watch</h3>
+        <p class="price">₹3,499</p>
+        <button class="add" onclick="addToCart()">Add to Cart</button>
+        <button class="order" onclick="orderNow('Sports Watch')">Order Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/236915/pexels-photo-236915.jpeg" alt="Minimal Watch">
+        <h3>Minimal Analog Watch</h3>
+        <p class="price">₹2,499</p>
+        <button class="add" onclick="addToCart()">Add to Cart</button>
+        <button class="order" onclick="orderNow('Minimal Analog Watch')">Order Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/325845/pexels-photo-325845.jpeg" alt="Luxury Watch">
+        <h3>Luxury Steel Watch</h3>
+        <p class="price">₹4,999</p>
+        <button class="add" onclick="addToCart()">Add to Cart</button>
+        <button class="order" onclick="orderNow('Luxury Steel Watch')">Order Now</button>
+    </div>
+
+</div>
+
+<script>
+let cart = 0;
+
+function addToCart() {
+    cart++;
+    document.getElementById("cartCount").innerText = cart;
+    alert("Item added to cart!");
+}
+
+function orderNow(product) {
+    alert("Order placed for " + product + " (Demo only)");
+}
+</script>
+
+</body>
+</html>
